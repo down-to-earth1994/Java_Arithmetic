@@ -1,5 +1,7 @@
 package com.hyf.java_arithmetic.tree;
 
+import java.util.Stack;
+
 /**
  * @Author heyanfeng
  * @Contact
@@ -49,5 +51,23 @@ public class DepthTree {
         postOrderTraveral(node.rightChild);
         System.out.println(node.data);
 
+    }
+
+
+    public static void perOrderTraveralWithStack(TreeNode root){
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        TreeNode treeNode =  root;
+        while (treeNode != null || !stack.isEmpty()){
+            while (treeNode!=null){
+                System.out.println(treeNode.data);
+                stack.push(treeNode);
+                treeNode = treeNode.leftChild;
+            }
+            //如果节点没有左孩子，则弹出栈顶节点，访问节点的右孩子
+            if(!stack.isEmpty()){
+                treeNode =  stack.pop();
+                treeNode = treeNode.rightChild;
+            }
+        }
     }
 }
