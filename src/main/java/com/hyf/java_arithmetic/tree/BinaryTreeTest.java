@@ -23,6 +23,8 @@ public class BinaryTreeTest {
         DepthTree.inOrderTraveral(treeNode);
         System.out.println("*****后序遍历*****");
         DepthTree.postOrderTraveral(treeNode);
+        System.out.println("*****广度遍历*****");
+        LevelTree.levelTree(treeNode);
     }
 
 }
